@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------------    
 * Copyright (C) 2010-2014 ARM Limited. All rights reserved.    
 *    
-* $Date:        19. March 2015
-* $Revision: 	V.1.4.5
+* $Date:        12. March 2014
+* $Revision: 	V1.4.4
 *    
 * Project: 	    CMSIS DSP Library    
 * Title:	    arm_mat_inverse_f64.c    
@@ -683,15 +683,7 @@ arm_status arm_mat_inverse_f64(
 
     if((flag != 1u) && (in == 0.0f))
     {
-      pIn = pSrc->pData;
-      for (i = 0; i < numRows * numCols; i++)
-      {
-        if (pIn[i] != 0.0f)
-            break;
-      }
-      
-      if (i == numRows * numCols)
-        status = ARM_MATH_SINGULAR;
+      status = ARM_MATH_SINGULAR;
     }
   }
   /* Return to application */
