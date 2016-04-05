@@ -1,0 +1,15 @@
+#Source folder SConscript file
+
+Import('env')
+Import('cm_postfix')
+
+env.StaticLibrary(target='arm_cortex'+cm_postfix+'l_math',source=Glob('BasicMathFunctions/*.c')  
+	+Glob('CommonTables/*.c') 
+	+Glob('ComplexMathFunctions/*.c') 
+	+Glob('ControllerFunctions/*.c') 
+	+Glob('FastMathFunctions/*.c') 
+	+Glob('FilteringFunctions/*.c') 
+	+Glob('MatrixFunctions/*.c') 
+	+Glob('StatisticsFunctions/*.c') 
+	+Glob('SupportFunctions/*.c') 
+	+Glob('TransformFunctions/*.c'))
